@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<webfonts>
+	<font>
+		<name>UF XO Tahion</name>
+		<user>1</user>
+		<fingerprint>uf_xo_tahion</fingerprint>
+		<style><![CDATA[uf_xo_tahion, 'Arial Narrow', sans-serif;]]></style>
+		<config><![CDATA[UF XO Tahion/uf_xo_tahion, 'Arial Narrow', sans-serif;]]></config>
+		<css_rule><![CDATA[
+			@font-face
+			{
+				font-family: 'uf_xo_tahion';
+				src:url('uf_xo_tahion/XO_Tahion_Nu.woff') format('woff');
+				font-weight: normal;
+				font-style: normal;
+			}
+		
+			@font-face
+			{
+				font-family: 'uf_xo_tahion';
+				src:url('uf_xo_tahion/XO_Tahion_bold.woff') format('woff');
+				font-weight: bold;
+				font-style: normal;
+			}
+		]]></css_rule>
+		<files>
+			<regular>
+				<file>uf_xo_tahion/XO_Tahion_Nu.woff</file>
+			</regular>
+			<bold>
+				<file>uf_xo_tahion/XO_Tahion_bold.woff</file>
+			</bold>
+		</files>
+	</font>
+	<font>
+		<name>Calibri</name>
+		<user>1</user>
+		<fingerprint>uf_calibri</fingerprint>
+		<style><![CDATA[uf_calibri, 'Arial Narrow', sans-serif;]]></style>
+		<config><![CDATA[Calibri/uf_calibri, 'Arial Narrow', sans-serif;]]></config>
+		<css_rule><![CDATA[
+			@font-face
+			{
+				font-family: 'uf_calibri';
+				src:url('uf_calibri/Calibri.woff') format('woff');
+				font-weight: normal;
+				font-style: normal;
+			}
+		
+			@font-face
+			{
+				font-family: 'uf_calibri';
+				src:url('uf_calibri/Calibri-Bold.woff') format('woff');
+				font-weight: bold;
+				font-style: normal;
+			}
+		]]></css_rule>
+		<files>
+			<regular>
+				<file>uf_calibri/Calibri.woff</file>
+			</regular>
+			<bold>
+				<file>uf_calibri/Calibri-Bold.woff</file>
+			</bold>
+		</files>
+	</font>
+</webfonts>

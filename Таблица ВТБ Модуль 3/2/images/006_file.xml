@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+'*	006_file.xml
+'*	Copyright (c) Websoft, 2006.  All rights reserved.
+--><params>
+	<object>
+		<label>Внешний файл</label>
+		<width>350</width>
+		<height>40</height>
+		<description>Внешний файл, откроющийся в новом окне</description>
+		<state_extension>false</state_extension>
+	</object>
+	<page name="Основные" w="320" h="160">
+		<param type="label" text="Файл" x="10" y="10" w="120" h="13"/>
+		<param type="file" id="file_uri" text="" def="" x="130" y="8" w="163" h="13"/>
+		<param type="label" text="Иконка" x="10" y="26" w="120" h="13"/>
+		<param type="select" id="icon" text="" def="standard" x="130" y="24" w="180" h="13">
+            <items>
+                <item id="none" label="Без иконки">
+                    <events>
+                        <event name="selendok" target="lab_file_icon" action="disable"/>
+                        <event name="selendok" target="file_icon" action="disable"/>
+					</events>
+				</item>
+               <item id="standard" label="Автоподбор">
+                    <events>
+                        <event name="selendok" target="lab_file_icon" action="disable"/>
+                        <event name="selendok" target="file_icon" action="disable"/>
+					</events>
+				</item>
+                <item id="custom" label="По выбору">
+                    <events>
+                        <event name="selendok" target="lab_file_icon" action="enable"/>
+                        <event name="selendok" target="file_icon" action="enable"/>
+					</events>
+				</item>
+			</items>
+		</param>
+		<param type="label" id="lab_file_icon" text="Файл картинки" x="10" y="42" w="120" h="13"/>
+		<param type="file" id="file_icon" text="" def="" x="130" y="40" w="163" h="13" ext="Картинки (*.png;*.jpg;*.jpeg;*.gif)|*.png;*.jpg;*.jpeg;*.gif|PNG (*.png)|*.png|JPEG (*.jpg;*.jpeg)|*.jpg;*.jpeg|GIF (*.gif)|*.gif|Все файлы (*.*)|*.*|||"/>
+		<param type="label" text="Подпись" x="10" y="58" w="120" h="13"/>
+		<param type="textedit" id="file_text" text="" def="Подпись" x="130" y="56" w="163" h="13"/>
+		<param type="label" text="Расположение подписи" x="10" y="74" w="120" h="13"/>
+		<param type="select" id="file_controls" text="" def="right" x="130" y="72" w="180" h="13">
+		  <items>
+			<item id="right" label="Справа"/>
+			<item id="left" label="Слева"/>
+			<item id="bottom" label="Снизу"/>
+		  </items>
+		</param>
+		<param type="label" id="lab_padding" text="Отбивка от иконки" def="" x="10" y="90" w="120" h="13"/>
+		<param type="spinner" id="padding" text="" def="10" x="130" y="88" w="32" h="13" min="0" max="99"/>
+		<param type="label" id="lab_padding" text="пкс" def="" x="165" y="90" w="30" h="13"/>
+		<param type="check" id="pic_link" def="yes" text="Открывать файл по нажатию на иконку" x="10" y="104" w="240" h="13"/>
+		<param type="check" id="file_link" def="no" text="Открывать файл по нажатию на подпись" x="10" y="120" w="240" h="13">
+			  <events>
+				  <event name="check" target="file_underline" action="enable"/>
+				  <event name="uncheck" target="file_underline" action="disable"/>
+			  </events>
+		</param>
+		<param type="check" id="file_underline" def="yes" text="Подчеркивать пояснение как ссылку" x="10" y="136" w="240" h="13"/>
+	</page>
+	<methods>
+		<method name="Constructor" label="_Constructor" access="private">
+			<params>
+			</params>
+			<body>
+			<![CDATA[function Constructor(argobj)
+			{
+				var oCurObj = CLO[argobj.pid];
+				var jCurObjDiv = $(oCurObj.div);
+				if(oCurObj.jxParams.find("pic_link").text()=="yes")
+				{
+					jCurObjDiv.find(".cl-pic-link").on("click", function () { oCurObj.CallMethod({ sMethod: "OpenLink" }) });
+				}
+				if(oCurObj.jxParams.find("file_link").text()=="yes")
+				{
+					jCurObjDiv.find(".cl-link-cell").on("click", function () { oCurObj.CallMethod({ sMethod: "OpenLink" }) });
+				}
+				return true;
+			}]]>
+			</body>
+		</method>
+		<method name="OpenLink" label="_OpenLink" access="private">
+			<params>
+			</params>
+			<body>
+			<![CDATA[function OpenLink(argobj)
+			{
+				var oCurObj = CLO[argobj.pid];
+				if(CL.oBrowser.sBrowser=="courselab")
+				{
+					alert(oCurObj.jxParams.find("file_uri").text() + "\n" + $(".cl-lang-strings > .cl-lang-external-url-disabled").text());
+				}
+				else
+				{
+					window.open(oCurObj.jxParams.find("file_uri").text())
+				}
+				return true;
+			}]]>
+			</body>
+		</method>
+	</methods>
+</params>

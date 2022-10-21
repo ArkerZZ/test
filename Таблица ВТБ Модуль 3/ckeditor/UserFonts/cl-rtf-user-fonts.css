@@ -1,0 +1,33 @@
+
+			@font-face
+			{
+				font-family: 'uf_xo_tahion';
+				src:url('uf_xo_tahion/XO_Tahion_Nu.woff') format('woff');
+				font-weight: normal;
+				font-style: normal;
+			}
+		
+			@font-face
+			{
+				font-family: 'uf_xo_tahion';
+				src:url('uf_xo_tahion/XO_Tahion_bold.woff') format('woff');
+				font-weight: bold;
+				font-style: normal;
+			}
+		
+			@font-face
+			{
+				font-family: 'uf_calibri';
+				src:url('uf_calibri/Calibri.woff') format('woff');
+				font-weight: normal;
+				font-style: normal;
+			}
+		
+			@font-face
+			{
+				font-family: 'uf_calibri';
+				src:url('uf_calibri/Calibri-Bold.woff') format('woff');
+				font-weight: bold;
+				font-style: normal;
+			}
+		

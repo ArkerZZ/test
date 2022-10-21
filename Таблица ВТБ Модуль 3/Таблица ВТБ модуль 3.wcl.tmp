@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Course file, saved 10/21/2022 10:54:01 PM by Эдриан using CourseLab 220813 -->
+<course3>
+<aicc_code>Table_VTB_module_3</aicc_code>
+<aicc_name>Таблица ВТБ модуль 3</aicc_name>
+<aicc_description>Тест</aicc_description>
+<modules>
+<module>
+<name>2</name>
+<folder_id>0</folder_id>
+<file>2\2.xml</file>
+<aicc_code>Table_VTB_lesson 6</aicc_code>
+<aicc_name>Урок 6</aicc_name>
+<aicc_description>Тест</aicc_description>
+<aicc_maxmark></aicc_maxmark>
+<aicc_reqmark></aicc_reqmark>
+</module>
+<module>
+<name>3</name>
+<folder_id>0</folder_id>
+<file>3\3.xml</file>
+<aicc_code>Урок 6</aicc_code>
+<aicc_name>Урок 4</aicc_name>
+<aicc_description>нроо</aicc_description>
+<aicc_maxmark></aicc_maxmark>
+<aicc_reqmark></aicc_reqmark>
+</module>
+</modules>
+<windows>
+<window>
+<module>3</module>
+<zoom>53</zoom>
+</window>
+<window>
+<module>2</module>
+<zoom>53</zoom>
+<subSlideVisible>true</subSlideVisible>
+<active>true</active>
+<slide>SLIDE_6</slide>
+</window>
+</windows>
+</course3>
